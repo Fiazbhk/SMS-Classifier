@@ -3,15 +3,13 @@ import pickle
 import string
 from nltk.corpus import stopwords
 import nltk
-try:
-    nltk.data.find("tokenizers/punkt")
-except LookupError:
-    nltk.download("punkt")
 from nltk.stem.porter import PorterStemmer
 
 ps = PorterStemmer()
 
-nltk.download('stopwords')
+nltk.download("punkt")
+nltk.download("punkt_tab")
+nltk.download("stopwords")
 
 def transform_text(text):
     text = text.lower()
@@ -58,3 +56,4 @@ if st.button('Predict'):
     else:
 
         st.header("Not Spam")
+
